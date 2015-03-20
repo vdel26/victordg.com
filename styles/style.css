@@ -1,7 +1,9 @@
 @font-face {
   font-family: "Roboto";
   font-weight: 300;
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype"),
+  src: local("Roboto"),
+       url("../fonts/Roboto-Regular.woff") format("woff"),
+       url("../fonts/Roboto-Regular.ttf") format("truetype"),
        url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype");
 }
 
@@ -11,7 +13,6 @@ body {
   align-items: center;
   font-family: "Roboto";
   color: #333;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -25,25 +26,18 @@ body {
 
 .headshot {
   cursor: grab;
-  width: 150px;
-  height: 150px;
+  width: 127px;
+  height: 127px;
+  margin: 16px 65px;
   flex: 0 0 auto;
 }
 
-.headshot-front {
-  display: block;
+.headshot.front {
+  background: url("../images/headshot.png") center no-repeat;
 }
 
-.headshot-back {
-  display: none;
-}
-
-.headshot:hover .headshot-front {
-  display: none;
-}
-
-.headshot:hover .headshot-back {
-  display: block;
+.headshot.back {
+  background: url("../images/headshot-back.png") center no-repeat;
 }
 
 .text {
@@ -68,9 +62,16 @@ body {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : portrait) {
-  .wrapper { flex-direction: column; }
-  .text { margin: 0 10vw; }
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: portrait) {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 5vw;
+  }
+  .headshot {
+    margin-bottom: 10vw;
+    margin-top: 0;
+  }
+  .text { margin: 0 5vw; }
 }
