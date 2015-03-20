@@ -18,7 +18,7 @@
               '-ms-transform' : '-webkit-transform');
     },
 
-    snapBack: function (el, initialX, initialY, currentX, currentY) {
+    snapBack: function (el, currentX, currentY) {
       Velocity(el, {
         translateX: [0, currentX],
         translateY: [0, currentY]
@@ -38,6 +38,7 @@
       function start (evt) {
         evt.preventDefault();
         dragging = true;
+        el.classList.add('moving');
       }
 
       function move (evt) {
@@ -51,7 +52,8 @@
       function end (evt) {
         if (dragging) {
           dragging = false;
-          app.snapBack(el, initialX, initialY, dx, dy);
+          app.snapBack(el, dx, dy);
+          el.classList.remove('moving');
         }
       }
 
@@ -68,8 +70,16 @@
       // swap heads
       var swap = document.querySelector('.swap');
       swap.addEventListener('click', app.swapHead);
+
+
     }
   };
 
   document.addEventListener('DOMContentLoaded', app.init);
+  window.addEventListener('load', function () {
+    // prefetch backface image
+    console.log('load');
+    var img = new Image();
+    img.src = "../images/headshot-back.png";
+  });
 })();
