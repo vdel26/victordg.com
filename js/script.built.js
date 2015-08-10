@@ -70,15 +70,12 @@
       // swap heads
       var swap = document.querySelector('.swap');
       swap.addEventListener('click', app.swapHead);
-
-
     }
   };
 
   document.addEventListener('DOMContentLoaded', app.init);
   window.addEventListener('load', function () {
     // prefetch backface image
-    console.log('load');
     var img = new Image();
     img.src = "../images/headshot-back.png";
   });
