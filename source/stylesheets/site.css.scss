@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import "normalize";
+@import "variables";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $text-color;
+  text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 10vw;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+}
+
+.column--left {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4rem;
+}
+
+.column--right {
+  flex: 0 0 400px;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    justify-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li:first-child {
+    padding-right: 0.5rem;
+  }
+
+  li:last-child {
+    padding-left: 0.5rem;
+  }
+
+  a {
+    color: $title-color;
+    weight: 400;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $text-color;
+  }
+}
+
+.headshot {
+  display: flex;
+  cursor: grab;
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem 0rem 4rem;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: box-shadow .30s;
+}
+
+.headshot.front {
+  background: url("../images/headshot.png") center no-repeat;
+}
+
+.headshot.back {
+  background: url("../images/headshot-back.png") center no-repeat;
+}
+
+.headshot:hover,
+.headshot.moving {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.link {
+  text-decoration: none;
+  color: $accent-color;
+  border-bottom: 1px $accent-color dotted;
+
+  &:hover {
+    color: white;
+    background: $accent-color;
+    border-bottom: 0;
+  }
+}
+
+.text p:first-child {
+  margin-top: 0;
+}
+
+// projects page
+.projects .headshot {
+  display: none;
+}
+
+.projects .column--right { height: auto; }
+
+.project {
+  margin-bottom: 2rem;
+}
+
+.project__title {
+  color: $title-color;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project__link {
+  @extend .link;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text { margin: 0 10vw; }
+  .column { height: auto; }
+  .column--left {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .column--right { flex: 1; }
+  .headshot { margin: 2rem; }
+
+  // projects
+  .project {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .project:first-child { margin-top: 1rem; }
+}
+

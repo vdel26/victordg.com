@@ -1,0 +1,17 @@
+{
+  "name": "victordg.com",
+  "version": "1.0.0",
+  "description": "Just my website",
+  "main": "./source/javascripts/all.js",
+  "author": "Victor Delgado",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.5.0",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "animateplus": "^1.3.2"
+  }
+}
