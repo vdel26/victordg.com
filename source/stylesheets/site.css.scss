@@ -20,6 +20,14 @@ body {
   align-items: stretch;
   justify-content: center;
   margin-top: 10vw;
+  // transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transition: transform 600ms ease, opacity 600ms ease-out;
+}
+
+.wrapper.is-transitioning {
+  // transform: translate3d(0, 80px, 0);
+  opacity: 0;
 }
 
 .column {
