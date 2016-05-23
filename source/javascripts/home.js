@@ -2,7 +2,7 @@ import animate from 'animateplus'
 
 const home = {
 
-  swapHead: function () {
+  swapHead: function (evt) {
     evt.preventDefault();
     let head = document.querySelector('.headshot');
     head.classList.toggle('front');

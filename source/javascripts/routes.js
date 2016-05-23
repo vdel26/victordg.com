@@ -5,10 +5,17 @@ const router = {}
 
 let cache = []
 const fetch = (uri, cb) => {
+  if (cache[uri]) return cb(cache[uri])
+
   xhr({ uri: uri }, function (err, res, body) {
     cache[uri] = body
     cb(body)
   })
+}
+
+router.configure = function (params) {
+  this.wrapper = params.wrapper || ''
+  this.transitionDuration = params.transitionDuration || 800
 }
 
 router.routes = {
@@ -40,16 +47,17 @@ router.routes = {
 }
 
 router.transitionStart = function (ctx, next) {
-  console.log('transition start')
-  ctx.wrapper.classList.add('is-transitioning');
-  next()
+  this.wrapper.classList.add('is-transitioning');
+  setTimeout(() => {
+    next()
+  }, this.transitionDuration);
 }
 
 router.transitionEnd = function (ctx, next) {
+  this.wrapper.classList.remove('is-transitioning')
   setTimeout(() => {
-    console.log('transition end')
-    ctx.wrapper.classList.remove('is-transitioning')
-  }, 800)
+    next()
+  }, this.transitionDuration)
 }
 
 export default router

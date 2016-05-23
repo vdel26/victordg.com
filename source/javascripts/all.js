@@ -16,11 +16,10 @@ const app = {
     next()
   },
 
-  startRouter: function () {
-    page('*', (ctx, next) => {
-      ctx.wrapper = this.wrapper
-      router.transitionStart(ctx, next)
-    })
+  startRouter: function (params) {
+    router.configure(params)
+
+    page('*', router.transitionStart.bind(router))
 
     let routes = router.routes
     for (const route of Object.keys(routes)) {
@@ -28,7 +27,7 @@ const app = {
            routes[route].handler,
            this.setPage.bind(this),
            routes[route].onLoad,
-           router.transitionEnd)
+           router.transitionEnd.bind(router))
     }
 
     page({ dispatch: false })
@@ -41,7 +40,7 @@ const app = {
     // setup router
     this.startRouter({
       wrapper: this.wrapper,
-      transition: 800
+      transitionDuration: 500
     })
 
     // home page
