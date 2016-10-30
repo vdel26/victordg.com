@@ -1,6 +1,6 @@
 {
   "name": "victordg.com",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Just my website",
   "main": "./source/javascripts/all.js",
   "author": "Victor Delgado",
@@ -14,6 +14,9 @@
     "xhr": "^2.2.0"
   },
   "dependencies": {
-    "animateplus": "^1.3.2"
+    "next": "^1.0.2"
+  },
+  "scripts": {
+    "dev": "next"
   }
 }

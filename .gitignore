@@ -14,3 +14,6 @@
 
 # Don't commit node_modules
 /node_modules
+
+# Ignore next.js bundle
+.next
