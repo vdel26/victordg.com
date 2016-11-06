@@ -21,3 +21,11 @@ defaults:
   values:
     layout: page
 permalink: pretty
+exclude:
+  - gulpfile.js
+  - package.json
+  - node_modules
+  - ".gitignore"
+sass:
+  sass_dir: styles/
+  style: compressed

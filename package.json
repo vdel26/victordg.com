@@ -1,0 +1,18 @@
+{
+  "name": "victordg.com",
+  "version": "2.0.0",
+  "description": "Just another website, but this one is mine",
+  "author": "Victor Delgado",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {},
+  "scripts": {
+    "dev": "./node_modules/webpack/bin/webpack.js --watch -d",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p"
+  }
+}

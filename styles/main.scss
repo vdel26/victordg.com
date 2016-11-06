@@ -1,0 +1,18 @@
+---
+---
+
+@charset "utf-8";
+
+@import "variables";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: $font-family;
+  color: $black;
+}
