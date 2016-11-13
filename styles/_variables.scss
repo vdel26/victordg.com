@@ -1,3 +1,24 @@
+// typography
+
 $font-family: Apercu, -apple-system, BlinkMacSystemFont, Roboto, Calibri, sans-serif;
+
+// colors
+
 $black: #111;
 $lightgrey: #aaa;
+$white: #f4f4f4;
+
+// easings
+
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+
+$tr-move-screen: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$tr-show-contact: cubic-bezier(0.08, 0.82, 0.17, 1);
+$op-slow-in: cubic-bezier(0.23, 1, 0.32, 1);

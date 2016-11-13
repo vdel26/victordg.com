@@ -1,5 +1,55 @@
 ---
 layout: default
 ---
+<div class="page home">
 
-<div>Hey ho, let's go!</div>
+  <div class="home__wrapper">
+
+    <section class="about">
+      {{ page.body | markdownify }}
+    </section>
+
+    <aside class="contact">
+      <a class="contact__link" href="http://twitter.com/lechienvic" target="_blank">Twitter</a>
+      <a class="contact__link" href="http://github.com/vdel26" target="_blank">Github</a>
+      <a class="contact__link" href="http://instagram.com/victordg" target="_blank">Instagram</a>
+      <a class="contact__link" href="https://es.linkedin.com/in/vdelgado" target="_blank">Linkedin</a>
+    </aside>
+
+  </div>
+</div>
+
+<div class="page projects">
+  <div class="projects__close js-projects-close">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.9 9.9">
+      <polygon points="9.19 0 4.95 4.24 0.71 0 0 0.71 4.24 4.95 0 9.19 0.71 9.9 4.95 5.66 9.19 9.9 9.9 9.19 5.66 4.95 9.9 0.71 9.19 0"></polygon>
+    </svg>
+  </div>
+
+  <div class="projects__wrapper js-projects">
+    <div class="project">
+      <h1 class="project__title">Veggies in Season</h1>
+      <p class="project__body">An iOS app to help you eat healthily, by making it easy to know which vegetables and fruits are in season. Built in React Native. Get it from the App Store or read here about my experience building it.</p>
+    </div>
+    <div class="project">
+      <h1 class="project__title">Tinychart</h1>
+      <p class="project__body">Interactive playground to create nice-looking charts very easily. It is a pure client-side application built in React.js. View the source or give it a try.</p>
+    </div>
+    <div class="project">
+      <h1 class="project__title">Requestdiff</h1>
+      <p class="project__body">A troubleshooting utility to compare in a visual way the differences in HTTP headers and the message body between two API requests. View the source or visit the site.</p>
+    </div>
+    <div class="project">
+      <h1 class="project__title">Samwise.js</h1>
+      <p class="project__body">Support widget that makes it easy to show relevant documentation links based on the context of the user at any moment. It is bundled as a Javascript/CSS library that can be embedded in any website or webapp. Learn more here.</p>
+    </div>
+    <div class="project">
+      <h1 class="project__title">Play</h1>
+      <p class="project__body">A Chrome extension to control audio or video playing in background tabs. You will no longer need to search among all your open tabs every time you have to pause what you are listening to. You can get it here or check the source code here.</p>
+    </div>
+    <div class="project">
+      <h1 class="project__title">Gifted</h1>
+      <p class="project__body">A tiny Mac app to generate looping GIFs from videos. Just drag&drop and it is ready to go. Also my first stint at Objective-C development. View the source here or get it from the Mac app store.</p>
+    </div>
+  </div>
+</div>
