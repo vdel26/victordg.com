@@ -12,7 +12,6 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  -webkit-font-smoothing: antialiased;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -21,10 +20,14 @@ html, body {
 }
 
 body {
-  font-family: $font-family;
+  font-family: $font-family-not-loaded;
   font-style: normal;
   font-weight: 400;
   color: $black;
+}
+
+body.is-font-loaded {
+  font-family: $font-family;
 }
 
 .link {
@@ -37,10 +40,18 @@ body {
   &:hover {
     border-bottom: none;
   }
+
+  .is-touch &:hover {
+    border-bottom: 2px solid $black;
+  }
 }
 
 .link.is-active {
   text-decoration: line-through;
+  border-bottom: none;
+}
+
+.is-touch .link.is-active {
   border-bottom: none;
 }
 
@@ -60,7 +71,7 @@ body {
   max-width: 84%;
   margin: 0 auto;
   opacity: 1;
-  transition: .6s transform $ease-out-quart .6s, .6s opacity $ease-in-quint .6s; // vuelta
+  transition: .6s transform $ease-out-quart .6s, .6s opacity $ease-in-quint .6s; // projects -> home
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
 }
@@ -136,6 +147,10 @@ body {
   &:hover {
     color: $black;
   }
+
+  .is-touch &:hover {
+    color: $lightgrey;
+  }
 }
 
 //----- projects -----//
@@ -149,8 +164,9 @@ body {
   font-size: 28px;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   opacity: 0.1;
-  transition: .3s transform $ease-out-cubic .6s, .3s opacity ease 1s; // vuelta
+  transition: .3s transform $ease-out-cubic .6s, .3s opacity ease 1s; // projects -> home
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
 }
@@ -162,7 +178,9 @@ body {
   margin: 0 auto;
   z-index: 1;
   opacity: 0;
-  transition: .5s opacity ease; // vuelta
+  transition: .5s opacity ease; // projects -> home
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-style: preserve-3d;
   will-change: opacity;
 }
 
@@ -182,31 +200,35 @@ body {
   .home {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
-    transition: .5s transform $tr-move-screen, .25s opacity $op-slow-in .25s; // ida
+    transition: .5s transform $tr-move-screen, .25s opacity $op-slow-in .25s; // home -> projects
   }
 
   .projects {
     opacity: 1;
     pointer-events: auto;
     transform: translate3d(0, -100%, 0);
-    transition: .5s transform $tr-move-screen, .5s opacity ease; // ida
+    transition: .5s transform $tr-move-screen, .5s opacity ease; // home -> projects
   }
 
   .projects__wrapper {
     opacity: 1;
-    transition: .5s opacity ease .75s; // ida
+    transition: .5s opacity ease .75s; // home -> projects
   }
 
   .projects__close {
     opacity: 1;
-    transition: .5s opacity ease .75s; // ida
+    transition: .5s opacity ease .75s; // home -> projects
   }
+}
+
+.project.is-animating {
+  transition: .5s transform $ease-out-quint;
 }
 
 .project__title {
   font-size: 24px;
   font-weight: 300;
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   line-height: 1.7;
   cursor: pointer;
 
@@ -216,13 +238,25 @@ body {
 }
 
 .project__body {
+  display: block;
   font-size: 1rem;
-  margin: 0 0 2rem 0;
-  display: none;
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+  opacity: 0;
+  transition: .30s opacity $ease-out-cubic .4s;
 }
 
-.project__body.is-active {
-  display: block;
+.project__body.is-expanded {
+  height: auto;
+  margin: 0 0 2rem 0;
+  opacity: 1;
+
+  &.is-open {
+    // height is already given by transform so don't apply it twice
+    height: 0 !important;
+    visibility: visible;
+  }
 }
 
 @media only screen and (min-width: 900px) {

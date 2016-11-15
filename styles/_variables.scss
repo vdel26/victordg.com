@@ -1,11 +1,18 @@
 // typography
 
+@font-face {
+  font-family: 'Apercu';
+  src: url(../assets/apercu-regular.otf);
+  src: url(../assets/apercu-regular.woff) format("woff");
+}
+
 $font-family: Apercu, -apple-system, BlinkMacSystemFont, Roboto, Calibri, sans-serif;
+$font-family-not-loaded: -apple-system, BlinkMacSystemFont, Roboto, Calibri, sans-serif;
 
 // colors
 
 $black: #111;
-$lightgrey: #aaa;
+$lightgrey: #a0a0a0;
 $white: #f4f4f4;
 
 // easings
