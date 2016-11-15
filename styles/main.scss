@@ -71,6 +71,7 @@ body.is-font-loaded {
   max-width: 84%;
   margin: 0 auto;
   opacity: 1;
+  -webkit-transition: .6s transform $ease-out-quart .6s, .6s opacity $ease-in-quint .6s;
   transition: .6s transform $ease-out-quart .6s, .6s opacity $ease-in-quint .6s; // projects -> home
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
@@ -80,6 +81,7 @@ body.is-font-loaded {
   position: absolute;
   bottom: 0;
   opacity: 1;
+  -webkit-transition: .75s transform $tr-show-contact, .25s opacity $op-slow-in;
   transition: .75s transform $tr-show-contact, .25s opacity $op-slow-in;
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
@@ -101,6 +103,7 @@ body.is-font-loaded {
   font-size: 12px;
   cursor: pointer;
   opacity: 0;
+  -webkit-transition: 1s opacity $op-slow-in;
   transition: 1s opacity $op-slow-in;
   will-change: opacity;
 }
@@ -124,6 +127,7 @@ body.is-font-loaded {
 .contact__link {
   color: $lightgrey;
   text-decoration: none;
+  -webkit-transition: color .25s ease;
   transition: color .25s ease;
 
   &:first-child:before {
@@ -166,6 +170,7 @@ body.is-font-loaded {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   opacity: 0.1;
+  -webkit-transition: .3s transform $ease-out-cubic .6s, .3s opacity ease 1s; // projects -> home
   transition: .3s transform $ease-out-cubic .6s, .3s opacity ease 1s; // projects -> home
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
@@ -178,6 +183,7 @@ body.is-font-loaded {
   margin: 0 auto;
   z-index: 1;
   opacity: 0;
+  -webkit-transition: .5s opacity ease; // projects -> home
   transition: .5s opacity ease; // projects -> home
   -webkit-font-smoothing: antialiased;
   -webkit-transform-style: preserve-3d;
@@ -193,6 +199,7 @@ body.is-font-loaded {
   cursor: pointer;
   z-index: 2;
   opacity: 0;
+  -webkit-transition: .5s opacity ease;
   transition: .5s opacity ease;
 }
 
@@ -200,6 +207,7 @@ body.is-font-loaded {
   .home {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
+    -webkit-transition: .5s transform $tr-move-screen, .25s opacity $op-slow-in .25s; // home -> projects
     transition: .5s transform $tr-move-screen, .25s opacity $op-slow-in .25s; // home -> projects
   }
 
@@ -207,21 +215,25 @@ body.is-font-loaded {
     opacity: 1;
     pointer-events: auto;
     transform: translate3d(0, -100%, 0);
+    -webkit-transition: .5s transform $tr-move-screen, .5s opacity ease; // home -> projects
     transition: .5s transform $tr-move-screen, .5s opacity ease; // home -> projects
   }
 
   .projects__wrapper {
     opacity: 1;
+    -webkit-transition: .5s opacity ease .75s; // home -> projects
     transition: .5s opacity ease .75s; // home -> projects
   }
 
   .projects__close {
     opacity: 1;
+    -webkit-transition: .5s opacity ease .75s; // home -> projects
     transition: .5s opacity ease .75s; // home -> projects
   }
 }
 
 .project.is-animating {
+  -webkit-transition: .5s transform $ease-out-quint;
   transition: .5s transform $ease-out-quint;
 }
 
@@ -244,6 +256,7 @@ body.is-font-loaded {
   visibility: hidden;
   margin: 0;
   opacity: 0;
+  -webkit-transition: .30s opacity $ease-out-cubic .4s;
   transition: .30s opacity $ease-out-cubic .4s;
 }
 
