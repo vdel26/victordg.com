@@ -259,6 +259,17 @@ body.is-font-loaded {
   }
 }
 
+.project__link {
+  color: $white;
+  border-bottom: 1px solid $white;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: none;
+  }
+}
+
+
 @media only screen and (min-width: 900px) {
   .project__title {
     font-size: 28px;
