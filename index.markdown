@@ -4,11 +4,11 @@ date: 2016-11-05 20:02:00 Z
 body: |-
   Hi, I’m <a class="link js-link js-link--contact">Victor</a>.
 
-  I am a co-founder at <a class="link js-link" target="_blank" href="http://thenorthstudio.com">North</a>, a digital product studio from Barcelona.
+  Co-founder at <a class="link js-link" target="_blank" href="http://thenorthstudio.com">North</a>, a digital product studio from Barcelona.
 
-  Being outdoors, authenticity and a mix of creativity and technology turn me on.
+  I get stuff done and help others do the same. Being outdoors, authentic people and great food turn me on.
 
-  I also enjoy tinkering with <a class="link js-link js-link--projects">new ideas</a> on my free time.
+  Here are <a class="link js-link js-link--projects">some ideas</a> I've built for fun on my free time.
 projects:
 - title: Veggies in Season
   body: An iOS app to help you eat healthily, by making it easy to know which vegetables
