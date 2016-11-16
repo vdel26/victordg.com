@@ -6,9 +6,9 @@ body: |-
 
   Co-founder at <a class="link js-link" target="_blank" href="http://thenorthstudio.com">North</a>, a digital product studio from Barcelona.
 
-  I get stuff done and help others do the same. Being outdoors, authentic people and great food turn me on.
+  I get stuff done and help others do the same. Outdoors, authenticity, curiosity, and life’s simple pleasures &mdash;like great food&mdash; turn me on.
 
-  Here are <a class="link js-link js-link--projects">some ideas</a> I've built for fun on my free time.
+  Here are <a class="link js-link js-link--projects">some ideas</a> I build for fun on my free time.
 projects:
 - title: Veggies in Season
   body: An iOS app to help you eat healthily, by making it easy to know which vegetables
@@ -30,7 +30,7 @@ projects:
   body: Support widget that makes it easy to show relevant documentation links based
     on the context of the user at any moment. It is bundled as a Javascript/CSS library
     that can be embedded in any website or webapp. Learn more <a class="project__link"
-    href="/samwise.js" target="_blank">here</a>
+    href="https://github.com/vdel26/samwise.js" target="_blank">here</a>
 - title: Play
   body: A Chrome extension to control audio or video playing in background tabs. You
     will no longer need to search among all your open tabs every time you have to

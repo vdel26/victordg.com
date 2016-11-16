@@ -87,6 +87,34 @@ body.is-font-loaded {
   will-change: transform, opacity;
 }
 
+// 5
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+  .page.home {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .home__wrapper {
+    bottom: -15%;
+  }
+}
+
+// 6 & 6+
+@media only screen and (min-device-width : 375px) and (max-device-width : 736px) {
+  .page.home {
+    max-width: 86%;
+  }
+  .home__wrapper {
+    bottom: -8%;
+  }
+}
+
+// desktop
+@media only screen and (min-width: 900px) {
+  .home {
+    font-size: 30px;
+  }
+}
+// desktop
 @media only screen and (min-width: 900px) {
   .home {
     font-size: 30px;
@@ -97,9 +125,12 @@ body.is-font-loaded {
   max-width: 80%;
 }
 
+//----- contact -----//
+
 .contact {
   display: block;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: 12px;
   cursor: pointer;
   opacity: 0;
@@ -107,14 +138,6 @@ body.is-font-loaded {
   transition: 1s opacity $op-slow-in;
   will-change: opacity;
 }
-
-@media only screen and (min-width: 900px) {
-  .contact {
-    font-size: 1rem;
-  }
-}
-
-//----- contact -----//
 
 .is-showing-contact .home__wrapper {
   transform: translate3d(0, -10%, 0);
@@ -154,6 +177,47 @@ body.is-font-loaded {
 
   .is-touch &:hover {
     color: $lightgrey;
+  }
+}
+
+// 5
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+  .contact {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .contact__link {
+    &:first-child:before, &:last-child:after {
+      content: none;
+    }
+
+    &::after {
+      padding: 0 .25rem;
+    }
+  }
+}
+
+// 6 & 6+
+@media only screen and (min-device-width : 375px) and (max-device-width : 736px) {
+  .contact {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .contact__link {
+    &:first-child:before, &:last-child:after {
+      content: none;
+    }
+
+    &::after {
+      padding: 0 .25rem;
+    }
+  }
+}
+
+// desktop
+@media only screen and (min-width: 900px) {
+  .contact {
+    font-size: 1rem;
   }
 }
 
