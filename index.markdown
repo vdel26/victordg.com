@@ -6,7 +6,7 @@ body: |-
 
   Co-founder at <a class="link js-link" target="_blank" href="http://thenorthstudio.com">North</a>, a digital product studio from Barcelona.
 
-  I get stuff done and help others do the same. Outdoors, authenticity, curiosity, and life’s simple pleasures &mdash;like great food&mdash; turn me on.
+  I get stuff done and help others do the same. Being outdoors, curiosity, authenticity, and life’s simple pleasures &mdash;like great food&mdash; turn me on.
 
   Here are <a class="link js-link js-link--projects">some ideas</a> I build for fun on my free time.
 projects:

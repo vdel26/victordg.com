@@ -87,6 +87,10 @@ body.is-font-loaded {
   will-change: transform, opacity;
 }
 
+.about {
+  max-width: 82%;
+}
+
 // 5
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
   .page.home {
@@ -101,11 +105,15 @@ body.is-font-loaded {
 // 6 & 6+
 @media only screen and (min-device-width : 375px) and (max-device-width : 736px) {
   .page.home {
-    max-width: 86%;
+    font-size: 20px;
+    max-width: 88%;
   }
   .home__wrapper {
     bottom: -8%;
   }
+  .about {
+    max-width: 90%;
+  }
 }
 
 // desktop
@@ -119,10 +127,6 @@ body.is-font-loaded {
   .home {
     font-size: 30px;
   }
-}
-
-.about {
-  max-width: 80%;
 }
 
 //----- contact -----//
@@ -200,8 +204,9 @@ body.is-font-loaded {
 // 6 & 6+
 @media only screen and (min-device-width : 375px) and (max-device-width : 736px) {
   .contact {
+    font-size: 14px;
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
   .contact__link {
     &:first-child:before, &:last-child:after {
